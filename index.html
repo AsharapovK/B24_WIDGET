@@ -2,18 +2,34 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Локальное приложение Битрикс24</title>
   </head>
   <body>
-    <div id="name"></div>
-    <h1>Добро пожаловать в Приложение</h1>
-    <div id="request">
-      <script>
-        var request = window.location.pathname;
-        console.log(`request:`, request);
-        console.log(window);
-      </script>
+    <div class="webPage">
+      <div class="head">
+        <h1>Добро пожаловать в Приложение</h1>
+      </div>
+      <div class="content">
+        <p>
+          Приложение разработано для демонстрации возможностей локального
+          приложения Битрикс24.
+        </p>
+        <p>
+          Приложение позволяет получить информацию о текущем месте размещения
+          приложения, а также изменить размер окна.
+        </p>
+      </div>
+      <div class="footer">
+          Приложение разработано в
+          <a href="2sheets.ru"
+            >Битрикс24</a
+          >
+        </p>
+      </div>
     </div>
+
     <script src="//api.bitrix24.com/api/v1/"></script>
     <script>
       BX24.ready(function () {
@@ -25,6 +41,7 @@
               ", options = " +
               JSON.stringify(placementInfo["options"])
           );
+          BX24.resizeWindow(1500, 1500);
         });
       });
 
